@@ -24,6 +24,11 @@ diesel::table! {
         name -> Varchar,
         email -> Varchar,
         created_at -> Timestamp,
+        surname -> Nullable<Text>,
+        avatar_url -> Nullable<Text>,
+        bio -> Nullable<Text>,
+        is_active -> Bool,
+        updated_at -> Timestamp,
     }
 }
 

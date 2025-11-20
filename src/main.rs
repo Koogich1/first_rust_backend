@@ -32,7 +32,10 @@ async fn main() -> std::io::Result<()> {
             .service(
                 web::scope("/api")
                     .route("/users", web::post().to(handlers::create_user::create_user_handler))
-                    .route("/user/{id}", web::get().to(handlers::get_user_by_id::get_user_by_id_handler))
+                    .route("/user/{id}", web::get().to
+                    (handlers::get_user_by_id::get_user_by_id_handler))
+                    .route("/user/{id}", web::patch().to(handlers::update_user::update_user_handler))
+                    .route("/user/{id}", web::delete().to(handlers::delete_user::delete_user_handler))
                     .route("/users/all", web::get().to(handlers::get_all_users::get_all_users_handler))
             )
     })

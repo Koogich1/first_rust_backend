@@ -1,6 +1,6 @@
 use actix_web::{web, HttpResponse, Responder};
 use crate::db::PgPool;
-use crate::models::{NewUserRequest, User};
+use crate::models::{users_model::NewUserRequest, users_model::User};
 
 pub async fn create_user_handler(
 	pool: web::Data<PgPool>,
